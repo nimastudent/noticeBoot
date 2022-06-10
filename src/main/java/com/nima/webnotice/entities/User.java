@@ -1,11 +1,13 @@
 package com.nima.webnotice.entities;
 
-public class User {
 
+
+public class User {
 
     private Long id;
 
     private String userName;
+
 
     private String password;
 

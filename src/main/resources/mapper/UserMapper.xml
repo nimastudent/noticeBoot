@@ -10,6 +10,10 @@
         select * from user where id = #{id}
     </select>
 
+    <select id="selectByNameAndPass" resultType="com.nima.webnotice.entities.User">
+        select * from user where userName = #{userName} and password = #{password}
+    </select>
+
     <insert id="insert" parameterType="com.nima.webnotice.entities.User">
         insert into user  (username,password,nick_name) value (#{userName},#{password},#{nickName})
     </insert>

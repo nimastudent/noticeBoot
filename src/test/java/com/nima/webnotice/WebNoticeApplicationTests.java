@@ -30,4 +30,11 @@ class WebNoticeApplicationTests {
         System.out.println(delete);
     }
 
+    @Test
+    void loginTest(){
+        User user = new User();
+        user.setUserName("");
+        userDao.selectByNameAndPass(user);
+    }
+
 }

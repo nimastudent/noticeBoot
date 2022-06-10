@@ -14,12 +14,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Boolean login(User user) {
-        User dataUser = userDao.select(user.getId());
-        if (dataUser == null){
+        User result = userDao.selectByNameAndPass(user);
+        if (result == null) {
             return false;
-        }else {
-            if (dataUser.getUserName() == user.getUserName()) return true;
+        } else {
+            if (result.getUserName().equals(user.getUserName())
+                    && result.getPassword().equals(user.getPassword()))
+                user.setId(result.getId());
+                return true;
         }
-        return false;
     }
 }
